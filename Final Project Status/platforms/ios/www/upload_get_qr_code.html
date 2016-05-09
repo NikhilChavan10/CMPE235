@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+    background-color: lightblue;
+}
+    </style>
+   
+</head>
+ 
+
+
+
+ <div align="center">
+      
+<form target= "qrcode-frame" action="http://www.nikhils-chavan.com/uploadImage.php" method="post" enctype="multipart/form-data">
+    <br/><br/><br/>Select image to upload: <br/><br/>
+    <input type="file" name="fileToUpload[]" multiple="multiple" id="fileToUpload">
+    <br/><br/>
+    <input type="submit" value="Upload Image" name="submit">
+</form>
+
+<br/><br/>
+
+<br/>
+<br/>
+<br/>
+
+<button onclick=" window.history.back()">Go Back</button>
+<div align=" center">
+     <iframe name="qrcode-frame" frameborder="0"  id="qrcode" src="http://www.nikhils-chavan.com/uploadImage.php" height="315px;" width="350px"></iframe>
+</div>
+
+</html>

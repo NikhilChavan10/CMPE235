@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Hello World</title>
+
+    	<script type="text/javascript">
+
+            var getQueryString = function ( field, url ) {
+                var href = url ? url : window.location.href;
+                var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
+                var string = reg.exec(href);
+                return string ? string[1] : null;
+            };
+
+            function show_image(src, width, height, alt) {
+                var img = document.createElement("img");
+                img.src = src;
+                img.width = width;
+                img.height = height;
+                img.alt = alt;
+
+                // This next line will just add it to the <body> tag
+                document.body.appendChild(img);
+            }
+
+            function pageLoad()
+            {
+                alert(window.location.href);
+                var filepath_str = getQueryString('filepath');
+                alert(filepath_str);
+                show_image(filepath_str, 200, 200, 'Google Logo');
+            }
+
+            window.onload = pageLoad;  // invoke pageLoad after all content is loaded
+
+        </script>
+    </head>	
+    <body>
+
+        <div class="app">
+            
+        </div>
+		
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
